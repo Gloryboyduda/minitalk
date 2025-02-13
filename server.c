@@ -3,30 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:50:58 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/13 16:56:27 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/13 18:06:57 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
-
-t_server	*global_server()
-{
-	t_server	server;
-	return &server;
-}
-
-void	signal_handler(int sig)
-{
-	if (sig == SIGUSR1)
-		ft_putstr_fd("Received SIGUSR1\n", 1);
-	if (sig == SIGUSR2)
-		ft_putstr_fd("Received SIGUSR2\n", 1);
-}
-
+#include "client.h"
 int	main()
 {
-	
+	int pid = getpid();
+	signal(SIGUSR1, signal_handler);
+	signal(SIGUSR2, signal_handler);
+	ft_putnbr_fd(pid, 1);
+	fputstr("\n", 1);
+	while (1)
+	{
+		pause();
+	}
 }

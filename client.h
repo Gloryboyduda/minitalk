@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 17:04:24 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/13 17:09:21 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/13 17:51:42 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,16 @@
 
 # include <unistd.h>
 # include <stdio.h>
-# include "libft/libft.h"
 # include <signal.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <unistd.h>
+# include <signal.h>
+# include <stdio.h>
+
+void	fputstr(char *str, int fd);
+void	send_char(char c, int pid);
+void	ft_putnbr_fd(int n, int fd);
+
 
 #endif
