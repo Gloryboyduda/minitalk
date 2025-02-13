@@ -1,53 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 16:57:10 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/13 20:40:23 by duandrad         ###   ########.fr       */
+/*   Created: 2025/02/13 20:16:10 by duandrad          #+#    #+#             */
+/*   Updated: 2025/02/13 20:36:07 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
+#include "server.h"
 
-void	send_char(char c, int pid)
+size_t  ft_strlen(char *str)
 {
-	int	i;
+	size_t	i;
 
-	i = 8;
-	while (i--)
-	{
-		if ((c >> i) & 1)
-			kill(pid, SIGUSR2);
-		else
-			kill(pid, SIGUSR1);
-		usleep(100);
-	}
-}
-
-void	send_message(char *str, int pid)
-{
-	int i = 0;
-	while (str[i])
-	{
-		send_char(str[i], pid);
+	if (!str)
+		return (0);
+	i = 0;
+	while(str[i])
 		i++;
-	}
-	send_char(0, pid);
+	return (i);
 }
 
-
-int main(int ac, char **av)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	pid;
+	int	number;
 
-	if (ac != 3)
+	if (n == INT_MIN)
+		write(fd, "-2147483648", 11);
+	else if (n < 0)
 	{
-		fputstr("Invalid number of arguments\n", 1);
-		return (1);
+		write(fd, "-", 1);
+		n = -n;
+		ft_putnbr_fd(n, fd);
 	}
-	pid = atoi(av[1]);
-	send_message(av[2], pid);
+	else
+	{
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n %= 10, fd);
+		}
+		else
+		{
+			number = n + '0';
+			write(fd, &number, 1);
+		}
+	}
 }

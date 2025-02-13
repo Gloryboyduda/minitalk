@@ -2,7 +2,7 @@ NAME = minitalk
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = utils.c
+SRC = utils.c utils2.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
