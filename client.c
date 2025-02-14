@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:57:10 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/13 20:40:23 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/13 23:39:09 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,17 @@ void	send_message(char *str, int pid)
 int main(int ac, char **av)
 {
 	int	pid;
-
 	if (ac != 3)
 	{
 		fputstr("Invalid number of arguments\n", 1);
 		return (1);
 	}
-	pid = atoi(av[1]);
+	pid = ft_atoi(av[1]);
+	if (pid < 0)
+	{
+		fputstr("Invalid PID\n", 1);
+		return (1);
+	}
 	send_message(av[2], pid);
+	fputstr("\n", 1);
 }

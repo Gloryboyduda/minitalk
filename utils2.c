@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 20:16:10 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/13 20:36:07 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/13 23:35:49 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,30 @@ void	ft_putnbr_fd(int n, int fd)
 			write(fd, &number, 1);
 		}
 	}
+}
+
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	signal;
+	int	result;
+	
+	i = 0;
+	signal = 1;
+	result = 0;
+	while(str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			signal *= -1;
+		i++;
+	}
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		result *= 10;
+		result += str[i] - '0';
+		i++;
+	}
+	return (result * signal);
 }
