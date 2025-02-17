@@ -6,21 +6,21 @@
 /*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 20:16:10 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/13 23:35:49 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:34:02 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
 #include "server.h"
 
-size_t  ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
 	size_t	i;
 
 	if (!str)
 		return (0);
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	return (i);
 }
@@ -57,11 +57,11 @@ int	ft_atoi(char *str)
 	int	i;
 	int	signal;
 	int	result;
-	
+
 	i = 0;
 	signal = 1;
 	result = 0;
-	while(str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{

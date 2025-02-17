@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 17:16:40 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/13 20:36:29 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:33:22 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,26 @@ void	fputstr(char *str, int fd)
 		write(fd, &str[i], 1);
 		i++;
 	}
+}
+
+char	*ft_strdup(char *str)
+{
+	size_t	i;
+	size_t	len;
+	char	*new;
+
+	if (!str || !*str)
+		return (NULL);
+	len = ft_strlen(str);
+	i = 0;
+	new = malloc(len + 1);
+	if (!new)
+		return (NULL);
+	while (str[i])
+	{
+		new[i] = str[i];
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }

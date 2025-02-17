@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:51:08 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/13 20:26:12 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:32:55 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdlib.h>
-#include "utils.h"
+# include "utils.h"
 
 typedef struct s_server
 {
-	int		pid;
 	char	c;
 	int		received_bits;
 	char	*msg;
 }	t_server;
 
-void	signal_handler(int sig);
+t_server	*global_server(void);
+void		signal_handler(int sig, siginfo_t *info, void *context);
 
 #endif
