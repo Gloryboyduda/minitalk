@@ -6,7 +6,7 @@
 /*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:50:58 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/17 18:39:18 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/19 14:19:36 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	signal_handler(int sig, siginfo_t *info, void *context)
 
 int	main(void)
 {
-	int					pid;
-	struct sigaction	sa;
+	int						pid;
+	static struct sigaction	sa;
 
 	global_server()->msg = ft_strdup("");
 	pid = getpid();

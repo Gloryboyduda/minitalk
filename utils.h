@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 20:18:22 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/17 12:26:26 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/19 14:26:10 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdlib.h>
+# include <stdbool.h>
 
 char		*ft_strjoin_n(char *s1, char *s2, size_t n);
 void		fputstr(char *str, int fd);
