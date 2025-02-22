@@ -6,7 +6,11 @@
 /*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:57:10 by duandrad          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/02/22 10:51:07 by duandrad         ###   ########.fr       */
+=======
+/*   Updated: 2025/02/22 10:49:30 by duandrad         ###   ########.fr       */
+>>>>>>> 6d916f3 (Fix PID output formatting and remove obsolete tester script)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +69,7 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	pid = ft_atoi(av[1]);
-	printf("pid = %d\n", pid);
+	ft_putnbr_fd("pid = %d\n", pid);
 	if (pid < 0)
 	{
 		fputstr("Invalid PID\n", 1);
