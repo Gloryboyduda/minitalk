@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duandrad <duandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: duandrad <duandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 16:57:10 by duandrad          #+#    #+#             */
-/*   Updated: 2025/02/19 14:27:53 by duandrad         ###   ########.fr       */
+/*   Updated: 2025/02/22 10:51:07 by duandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	pid = ft_atoi(av[1]);
+	printf("pid = %d\n", pid);
 	if (pid < 0)
 	{
 		fputstr("Invalid PID\n", 1);
